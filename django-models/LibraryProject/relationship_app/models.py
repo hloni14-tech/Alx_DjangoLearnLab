@@ -18,7 +18,7 @@ class Name(models.Models):
     name = models.CharField(max_length = 200)
     return self.name
     
-class Book(models.Models):    
+class Book(models.Model):    
     books  = models.CharField(max_length = 100)
     books = models.ManyToManyField(Name,related_name = 'name')
 
@@ -36,3 +36,4 @@ user = User.objects.create.user()
 
 
 user = User.objects.get()
+
