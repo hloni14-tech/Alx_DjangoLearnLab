@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Book
+from .models import Library
 
 def hello_view(request):
     return HttpResponse
@@ -8,6 +9,7 @@ def hello_view(request):
 def book_list(request):
     books = Book.objects.all()
     relationship_app/list_books.html
+    relationship_app/library_detail.html
 
     context ={'book_list': books}
     return render(request,'books/book_list.html',context)
@@ -23,6 +25,7 @@ class BookDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         book = self.get_object()
         context['average_rating'] = book.get_average_rating()
+
 
 
 
