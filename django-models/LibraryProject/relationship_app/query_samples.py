@@ -45,7 +45,7 @@ def get_librarian_for_library(library_name):
     """
     try:
         lib = Library.objects.get(name=library_name)
-        Librarian.objects.get(library_name)
+        Librarian.objects.get(library=)
     except Library.DoesNotExist:
         print(f"No library named {library_name}")
         return None
@@ -64,5 +64,6 @@ if __name__ == '__main__':
     query_books_by_author('Jane Austen')
     list_books_in_library('City Library')
     get_librarian_for_library('City Library')
+
 
 
