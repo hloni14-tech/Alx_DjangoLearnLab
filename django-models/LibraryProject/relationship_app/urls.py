@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from .views import list_books, "LibraryDetailView"
 
 urlpatterns = [
     path('hello/', views.hello_view, name='hello'),
@@ -14,3 +15,4 @@ urlpatterns = [
     path('accounts/', include('accounts.urls', namespace='accounts')),
     # ...
 ]
+
