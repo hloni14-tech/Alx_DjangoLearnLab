@@ -16,6 +16,7 @@ from django.db import models
 
 class Name(models.Models):
     name = models.CharField(max_length = 200)
+    return self.name
     
 class Book(models.Models):    
     books  = models.CharField(max_length = 100)
@@ -32,5 +33,6 @@ class library(models.Models):
 from django.contrib.auth.models import User
 
 user = User.objects.create.user()
+
 
 user = User.objects.get()
