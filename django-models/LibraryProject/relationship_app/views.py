@@ -16,6 +16,7 @@ def book_list(request):
 
 from django.views.from django.views.generic import DetailView
 from .models import Book
+from django.views.generic.detail import DetailView
 
 class BookDetailView(DetailView):
     model = Book
@@ -25,6 +26,7 @@ class BookDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         book = self.get_object()
         context['average_rating'] = book.get_average_rating()
+
 
 
 
