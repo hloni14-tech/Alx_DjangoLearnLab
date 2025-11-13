@@ -12,6 +12,7 @@ def query_books_by_author(author_name):
     """
     try:
         author = Author.objects.get(name=author_name)
+        objects.filter(author=author)
     except Author.DoesNotExist:
         print(f"No author named {author_name}")
         return []
@@ -62,3 +63,4 @@ if __name__ == '__main__':
     query_books_by_author('Jane Austen')
     list_books_in_library('City Library')
     get_librarian_for_library('City Library')
+
