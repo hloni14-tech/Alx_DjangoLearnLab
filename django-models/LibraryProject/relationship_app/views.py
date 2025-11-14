@@ -27,6 +27,10 @@ class BookDetailView(DetailView):
         book = self.get_object()
         context['average_rating'] = book.get_average_rating()
 
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+
+
 
 
 
