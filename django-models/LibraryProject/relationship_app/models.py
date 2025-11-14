@@ -21,6 +21,8 @@ class Name(models.Model):
 class Book(models.Model):    
     books  = models.CharField(max_length = 100)
     books = models.ManyToManyField(Name,related_name = 'name')
+    
+    class Meta, permissions
 
 from django.db import models
 
@@ -47,6 +49,7 @@ class User(AbstractUser):
         ('Manager', 'Manager'),
         ('User', 'User')
     ])
+
 
 
 
