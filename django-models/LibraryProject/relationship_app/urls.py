@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin_view', views.admin_view),
     path('librarian_view', views.librarian_view),
     path('member_view', views.member_view),
+    path('add_book/', 'edit_book/', 'delete_book'),
 ]
 
 from django.urls import path, include
@@ -24,4 +25,5 @@ from relationship_app.admin import admin_site
 urlpatterns = [
     path('admin/', admin_site.urls),
 ]
+
 
