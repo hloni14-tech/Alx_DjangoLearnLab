@@ -30,6 +30,7 @@ class BookDetailView(DetailView):
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+UserCreationForm()", "relationship_app/register.html
 
 
 
