@@ -5,6 +5,9 @@ urlpatterns = [
     path('hello/', views.hello_view, name='hello'),
     path('detail', views.AboutView.as_view(),
          name='detail'),
+    path('admin_view', views.admin_view),
+    path('librarian_view', views.librarian_view),
+    path('member_view', views.member_view),
 ]
 
 from django.urls import path, include
@@ -21,3 +24,4 @@ from relationship_app.admin import admin_site
 urlpatterns = [
     path('admin/', admin_site.urls),
 ]
+
