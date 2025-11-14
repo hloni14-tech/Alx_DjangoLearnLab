@@ -37,4 +37,8 @@ user = User.objects.create.user()
 
 user = User.objects.get()
 
+class UserProfile(models.Model): 
+    "Admin", "Member"
+
+
 
