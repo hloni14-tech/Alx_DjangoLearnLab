@@ -32,6 +32,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 UserCreationForm()", "relationship_app/register.html
 
+@user_passes_test", 
+"relationship_app/member_view.html", 
+"relationship_app/librarian_view.html", "relationship_app/admin_view.html"
+
+
 
 
 
