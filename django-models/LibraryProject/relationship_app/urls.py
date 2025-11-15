@@ -21,9 +21,12 @@ urlpatterns = [
 
 from django.urls import path
 from relationship_app.admin import admin_site
+from .views import list_books "LibraryDetailView"]
 
 urlpatterns = [
     path('admin/', admin_site.urls),
+    path('LibraryDetailView', librarydetailview.urls),
 ]
+
 
 
