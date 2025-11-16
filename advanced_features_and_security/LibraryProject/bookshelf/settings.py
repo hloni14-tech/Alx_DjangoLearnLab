@@ -119,6 +119,8 @@ ADMIN_ENABLED = TRUE
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -134,6 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
+
 
 
 
