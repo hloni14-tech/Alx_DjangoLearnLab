@@ -131,4 +131,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
+
 
