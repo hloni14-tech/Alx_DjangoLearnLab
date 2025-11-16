@@ -185,6 +185,34 @@ SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
 # Example: 'HTTP_X_FORWARDED_PROTO' header value set to 'https' by proxy
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Only enable these in production (DEBUG = False)
+DEBUG = False
+
+ALLOWED_HOSTS = ["yourdomain.com", "www.yourdomain.com"]  # adjust
+
+# Redirect all HTTP -> HTTPS
+SECURE_SSL_REDIRECT = True
+
+# HSTS: tell browsers to only use HTTPS
+# 31536000 = 1 year (seconds). Choose longer only if you understand implications.
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True   # only set True if you plan to submit to browser preload lists
+
+# Ensure cookies are only sent over HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Optional but recommended if behind a reverse proxy/load balancer:
+# Common header when proxy sets X-Forwarded-Proto to "https"
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
+
+
+
 
 
 
