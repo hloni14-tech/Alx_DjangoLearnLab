@@ -68,6 +68,8 @@ class CustomUser(AbstractUser):
 class CustomUserManager(BaseUserManager):
     create_user, create_superuser
 
+can_create
+
 
 
 
