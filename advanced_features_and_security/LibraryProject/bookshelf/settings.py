@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'relationship_app',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
+
 
 
 
