@@ -42,6 +42,8 @@ from django.contrib.auth.decorators import permission_required
 
 raise_exception
 
+from .forms import ExampleForm
+
 
 
 
