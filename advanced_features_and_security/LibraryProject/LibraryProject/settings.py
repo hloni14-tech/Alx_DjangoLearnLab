@@ -182,6 +182,8 @@ SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
 # Example: 'HTTP_X_FORWARDED_PROTO' header value set to 'https' by proxy
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+bookshelf.CustomUser"
+
 
 
 
