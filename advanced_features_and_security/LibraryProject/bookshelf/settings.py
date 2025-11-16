@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+q%bt#=l#++il=)zq3ps4^+b##+w&t#gs+b$+@6z=y=n$c$8%4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -136,6 +136,55 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
+
+# settings.py (production-minded)
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# load from env: use a real env loader in production (dotenv, os.environ, or secret manager)
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
+
+# Make sure DEBUG is False in production
+if DEBUG:
+    # Only allow DEBUG in development
+    print("WARNING: DEBUG is True. Do not use in production!")
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')  # must be set in prod, never committed
+
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'example.com').split(',')
+
+# === Security-related cookie & header settings ===
+CSRF_COOKIE_SECURE = True              # only send CSRF cookie over HTTPS
+SESSION_COOKIE_SECURE = True           # only send session cookie over HTTPS
+CSRF_COOKIE_HTTPONLY = False           # usually False so JS apps can read CSRF, set True if not needed
+SESSION_COOKIE_HTTPONLY = True         # prevent JS access to session cookie
+
+# SameSite: 'Lax' is reasonable default for most sites. Use 'Strict' only if you understand implications.
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SAMESITE = 'Lax'
+
+# Prevent clickjacking
+X_FRAME_OPTIONS = 'DENY'               # or 'SAMEORIGIN' if you embed in same domain
+
+# Basic browser protections
+SECURE_BROWSER_XSS_FILTER = True       # sets X-XSS-Protection header
+SECURE_CONTENT_TYPE_NOSNIFF = True    # sets X-Content-Type-Options: nosniff
+
+# Force HTTPS and HSTS
+SECURE_SSL_REDIRECT = True             # redirect all HTTP->HTTPS
+SECURE_HSTS_SECONDS = 31536000         # 1 year (set lower first, then ramp up)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Optional: prevent referrer info on cross-origin requests
+SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
+
+# Add secure proxy header if behind a proxy like Nginx (set by your proxy)
+# Example: 'HTTP_X_FORWARDED_PROTO' header value set to 'https' by proxy
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
 
