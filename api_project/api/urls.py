@@ -3,6 +3,6 @@ urlpatterns = [
     path('', include(router.urls)), 
 ]
 
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import DefaultRouter()
 
 router.register(r'books_all', BookViewSet, basename='book_all')
