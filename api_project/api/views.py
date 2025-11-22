@@ -10,6 +10,18 @@ class BookListCreateAPIView(generics.ListAPIView):
 
 class BookViewSetModelViewSet(generics.ModelViewSet):
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
+class HelloApiView(APIView):
+    permission_classes = [IsAuthenticated]  
+    
+    def get(self, request):
+        return Response({
+            "message": f"Welcome, {request.user.username} ( you are authenticated)"
+        })
+
 
 
 
