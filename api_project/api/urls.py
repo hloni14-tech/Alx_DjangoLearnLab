@@ -1,3 +1,3 @@
 urlpatterns = [
-  path('BookList.as.view'),
+  path('BookList.as_view'),
 ]
