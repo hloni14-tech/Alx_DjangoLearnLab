@@ -126,4 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 "rest_framework.authentication.TokenAuthentication
 
+rest_framework.permissions.IsAuthenticated
+
+
 
