@@ -1,1 +1,2 @@
-
+django-admin startproject advanced_api_project .
+python manage.py startapp api
