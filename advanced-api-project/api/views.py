@@ -3,10 +3,13 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticate
 from django_filters import rest_framework 
 from rest_framework import generics
 # Create your views here.
+filters.OrderingFilter
+
 ListView 
 DetailView 
 CreateView 
 UpdateView 
 DeleteView
+
 
 
