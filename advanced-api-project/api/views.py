@@ -4,12 +4,14 @@ from django_filters import rest_framework
 from rest_framework import generics
 # Create your views here.
 filters.OrderingFilter
+filters.SearchFilter
 
 ListView 
 DetailView 
 CreateView 
 UpdateView 
 DeleteView
+
 
 
 
