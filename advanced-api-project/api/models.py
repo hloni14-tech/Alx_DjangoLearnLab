@@ -1,9 +1,10 @@
 from django.db import models
 
-class Author(model.Models):
+class Author(models.Model):
   author = model.CharField(max_length=200)
 
-class Book(model.Models):
+class Book(models.Model):
   
 # Create your models here.
+
 
