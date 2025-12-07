@@ -50,4 +50,24 @@ urlpatterns = [
 ]
 
 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # List all posts
+    path('posts/', views.PostListView.as_view(), name='post_list'),
+
+    # Create a new post
+    path('posts/new/', views.PostCreateView.as_view(), name='post_create'),
+
+    # View a single post detail
+    path('posts/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
+
+    # Edit/update a post
+    path('posts/<int:pk>/edit/', views.PostUpdateView.as_view(), name='post_edit'),
+
+    # Delete a post
+    path('posts/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
+]
+
 
