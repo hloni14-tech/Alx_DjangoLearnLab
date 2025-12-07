@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,4 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBaclend',
 
 ]
+
