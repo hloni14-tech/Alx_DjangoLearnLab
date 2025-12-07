@@ -41,7 +41,10 @@ context = {
 }
 return render(request, 'blog/profile.html', context)
 
+ListView,DetailView,CreateView,UpdateView,DeleteView
+
 
 # Create your views here.
+
 
 
