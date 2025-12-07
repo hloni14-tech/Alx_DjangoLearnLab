@@ -36,3 +36,11 @@ img.save(self.image.path)
 except Exception:
 # when using remote storage or default image, ignore
 pass
+
+class Comment(models.Model):
+    post = models.ForeignKey()
+    author = models.ForeignKey()
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=False)
+
