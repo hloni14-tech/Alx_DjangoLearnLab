@@ -47,6 +47,42 @@ CommentCreateView, CommentUpdateView, LoginRequiredMixin, UserPassesTestMixin, C
 
 Post.objects.filter, title__icontains, tags__name__icontains, content__icontains
 # Create your views here.
+from django.views.generic import ListView, DetailView
+from .models import Post
+
+class PostListView(ListView):
+    model = Post
+    template_name = "post_list.html"
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "post_detail.html"
+
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+    template_name = "post_form.html"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import UpdateView
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    fields = ['title', 'content']
+    template_name = "post_form.html"
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
 
 
 
