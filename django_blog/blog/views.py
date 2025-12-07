@@ -43,8 +43,9 @@ return render(request, 'blog/profile.html', context)
 
 ListView,DetailView,CreateView,UpdateView,DeleteView
 
-
+CommentCreateView, CommentUpdateView, LoginRequiredMixin, UserPassesTestMixin, CommentDeleteView
 # Create your views here.
+
 
 
 
