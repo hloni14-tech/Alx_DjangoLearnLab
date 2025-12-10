@@ -76,6 +76,7 @@ urlpatterns = [
     path('posts/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
 ]
 
-from django.urls import path "login/", "register/", "profile/"
+from django.urls import path "login/", "register/", profile
+
 
 
