@@ -75,12 +75,10 @@ urlpatterns = [
     # Delete a post
     path('posts/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
 ]
+ 
 
-from django.urls import path 
+from django.urls import path "login/", "register/", "profile/"
 
-urlpatterns = [
-    path("login/", "register/", "profile/"),
-]
 
 
 
