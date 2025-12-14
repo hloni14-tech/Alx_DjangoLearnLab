@@ -15,7 +15,18 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey('auth.user', on_delete=models.CASCADE)
     updated_at = models.DateTimeField(auto_now_add=True)
-    
+
+class LikkesModel(models.Model):
+    post = models.ForeignKey(Posts, related_name='likes', on_delete=models.CASCADE)
+    user = model.ForeignKey('auth.user', on_delete=models.CASCADE)
+
+class Notifications(models.Model):
+    recipient = models.ForeignKey('auth.user', related_name='notifications', on_delete=models.CASCADE)
+    actor = models.ForeignKey('auth.user', on_delete=models.CASCADE)
+    verb = models.CharField(max_length=255)
+    target = models.ForeignKey(Posts, null=True, blank=True, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
 
 
 
