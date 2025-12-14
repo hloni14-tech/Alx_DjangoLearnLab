@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from app.notifications.models import Notifications
+from app.notifications.views import LikePostView
 
 # Create your views here.
 class PostListView:
@@ -77,7 +79,20 @@ class NotificationListView(GnericAPIView):
     def get(self, request, *args, **kwargs):
         return Response({"message": "List of notifications."})
 
+def get_object(self.pk):
+    return Generic.get_object_or_404(Post, pk=pk) 
+    
+def get_like_object(request, post):
+    return LikePostView.objects.get_or_create(user=request.user, post=post)
+    
+def create_notification(request, recipient, actor, verb, post=None):
+    return Notifications.objects.create
+    
+
+
+
  
+
 
 
 
