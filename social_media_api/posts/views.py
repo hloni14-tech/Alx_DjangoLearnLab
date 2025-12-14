@@ -37,6 +37,24 @@ class Comment.objects.all():
 class Post.objects.all():
    pass
 
+from rest_framework import permissions
+from generics.GnericAPIView import GnericAPIView
+from rest_framework.response import Response
+
+class SampleGenericView(GnericAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        return Response({"message": "This is a sample generic view response."})
+    
+    def get_following(request):
+        return following.all()
+    
+    def get_post_objects(request):
+        return Post.objects.all.filter()
+
+
+
 
 
 
