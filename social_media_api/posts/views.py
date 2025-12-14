@@ -86,12 +86,13 @@ def get_like_object(request, post):
     return LikePostView.objects.get_or_create(user=request.user, post=post)
     
 def create_notification(request, recipient, actor, verb, post=None):
-    return Notifications.objects.create
+    return Notification.objects.create
     
 
 
 
  
+
 
 
 
