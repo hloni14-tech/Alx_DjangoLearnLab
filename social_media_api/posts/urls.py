@@ -6,6 +6,7 @@ urlpatterns = [
     path('login/', include('user_authentication.urls')),
     path('post_views/', include('post_views.urls')),
     path('comments/', include('comments.urls'),)
+    path('feed/')
 ]
 
 from django.urls import path
