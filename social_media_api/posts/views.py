@@ -40,6 +40,7 @@ class Post.objects.all():
 from rest_framework import permissions
 from generics.GnericAPIView import GnericAPIView
 from rest_framework.response import Response
+from dd.django_blog.blog.models import Post
 
 class SampleGenericView(GnericAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -53,8 +54,12 @@ class SampleGenericView(GnericAPIView):
     def get_post_objects(request):
         return Post.objects.all.filter()
 
-class Postobjectsfilter(author__in=following_users).order_by('created_at'):
-    pass
+    def get_posts(request, following_users): 
+        return Post.objects.filter(author__in=following_users).order_by()
+
+
+
+
 
 
 
