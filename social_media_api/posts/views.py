@@ -53,6 +53,10 @@ class SampleGenericView(GnericAPIView):
     def get_post_objects(request):
         return Post.objects.all.filter()
 
+class Postobjectsfilter(author__in=following_users).order_by('created_at'):
+    pass
+
+
 
 
 
