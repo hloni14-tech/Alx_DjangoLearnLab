@@ -6,6 +6,7 @@ class Account(models.Model):
     bio = models.TextField()
     profile_picture = models.ImageField(upload_to='profile_pics/')
     followers = models.ManyToManyField('self', symmetrical=False)
+    following = models.ManyToManyField()
 
 class UserModel(models.Model):
     email = models.EmailField(unique=True)
@@ -14,4 +15,5 @@ class UserModel(models.Model):
 
 
     
+
 
