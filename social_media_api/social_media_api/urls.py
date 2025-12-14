@@ -22,4 +22,6 @@ urlpatterns = [
     path('register/', include('user_registration.urls')),
     path('login/', include('user_authentication.urls')),
     path('profile/', include('uesr_profile.urls')),
+    path('api/', posts.urls),
 ]
+
