@@ -25,6 +25,9 @@ from rest_framework import permissions
 class SampleGenericView(GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
+	def get_customers(request): 
+        return CustomUser.objects.all()
+
     def get(self, request, *args, **kwargs):
         return Response({"message": "This is a sample generic view response."})
 
@@ -36,3 +39,4 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('profile/', views.profile_view, name='profile'),
 ]
+
