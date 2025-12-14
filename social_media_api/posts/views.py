@@ -25,5 +25,18 @@ class CommentDeleteView:
 class CommentUpdateView:
     pass
 
+class viewsets:
+    pass
+
+class viewsets.ModelViewSet:
+    pass
+
+class Comment.objects.all():
+    pass
+
+class Post.objects.all():
+   pass
+
+
 
 
