@@ -7,6 +7,8 @@ urlpatterns = [
     path('post_views/', include('post_views.urls')),
     path('comments/', include('comments.urls'),)
     path('feed/')
+    path('<int:pk>/like/'), 
+    path('<int:pk>/unlike/'),
 ]
 
 from django.urls import path
