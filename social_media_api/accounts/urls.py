@@ -7,7 +7,7 @@ urlpatterns = [
     path('profile/', views.profile_view, name='profile'),
     path('follow/<int:user_id>'),
     path('unfollow/<int:user_id>/'),
-    path('feed/')
 ]
+
 
 
